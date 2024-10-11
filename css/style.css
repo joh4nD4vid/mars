@@ -13,8 +13,231 @@ html, body {
       cursor : pointer;
  }
 
+ #camerapos, #objectpos {
+   right : 10px;
+   font-family: monospace;
+   position : fixed;
+   z-index: 999;
+   color : white;
+ }
+
+ .hide {
+   display : none !important;
+ }
+
+ #clipBoardCamButton, #clipBoardPosButton {
+   border : 1px solid white;
+   font-family: monospace;
+   color : white;
+   height: 20px;
+   width: 100px;
+   cursor : pointer;
+   text-align : center;
+ }
+
+ #clipBoardCamButton:hover, #clipBoardPosButton {
+   color : #222;
+   background-color: #fff;
+ }
+
+
+ #wrap-content {
+      height: 100%;
+      width: 100%;
+      position : fixed;
+      display : flex;
+
+      align-items: center;
+      justify-content: space-around;
+ }
+
+ #update-content {
+  position: absolute;
+  height: 100%;
+  width: 90%;
+  text-align: center;
+ }
+
+ #content {
+   position : relative;
+   background-color: rgba(0,0,0,0.5);
+   color : white;
+   font-family: monospace;
+   height: calc(100% - 20px);
+   width: calc(100% - 20px);
+ }
+
+ #close {
+   position : absolute;
+   right : 0px;
+   background-image: url('../img/close.png');
+   height: 100px;
+   width: 100px;
+   transform : scale(0.7);
+   cursor : pointer;
+   z-index: 999;
+ }
+
+ #close:hover {
+  transform : scale(0.9);
+ }
+
+
+ .transition {
+   animation-duration: 1s;
+   animation-name: apparition;
+   animation-timing-function: ease-in-out;
+ }
+
+
+ @keyframes apparition {
+
+   from { 
+      transform: translate(0px, 500px); 
+      opacity : 0;
+   }
+
+   to   { 
+      transform: translate(0px, 0px); 
+      opacity : 1;
+   }
+
+ }
 
 
 
+  div.css3d-element {
+    pointer-events: none;
+  }
+
+
+ .spriteLabel {
+    color : rgb(234, 255, 42);
+    vertical-align: middle;
+
+    padding : 0.7px;
+    margin-top : 2.5px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    font-size : 1.5px;
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display : none;
+ }
+
+ .reveal-label { 
+  display : block !important;
+  border-right : 1px solid #EAFF2A;
+
+  animation : 
+      clignotement 1s steps(1, end) infinite,
+      tape steps(40, end) 0.5s;
+    overflow : hidden;
+    white-space : nowrap;
+}
+
+
+ #cssContainer {
+    pointer-events: none;
+ }
+
+
+
+
+
+
+
+ @keyframes reveal {
+
+  from { 
+     opacity : 0;
+  }
+
+  to   { 
+     opacity : 1;
+  }
+
+}
  
- 
+
+
+
+
+
+
+
+
+/* Effet machine à écrire */
+
+@keyframes clignotement {
+  0% { border-color : transparent; }
+  50% { border-color : #EAFF2A }
+  100% { border-color : transparent; }
+}
+
+@keyframes tape {
+  0% { width: 0px; }
+  100% { width : 10px; }
+}
+
+
+
+
+
+/* Barre d'icones */
+
+#button_interet {
+  height: 60px;
+  width: 60px;
+  background-image: url('../img/interet_off.png');
+  border : 1px solid transparent;
+  cursor : pointer;
+}
+
+#button_interet:hover {
+  border : 1px solid white;
+}
+
+.button_interet_on {
+  background-image: url('../img/interet_on.png') !important;
+}
+
+#barre_icones {
+  position : fixed;
+  z-index : 999;
+  bottom : 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color : rgba(255, 255, 255, 0.1);
+  padding: 10px;
+}
+
+
+
+
+/* Contenu popups */
+
+.contentPopup {
+  display : none;
+}
+
+.popupTitle {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.4em;
+}
+
+.popupText {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+}
+
+.popupImage {
+  height: 600px;
+}
+

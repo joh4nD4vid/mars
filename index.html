@@ -1,15 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
     <title>Mars</title>
 </head>
 
+
 <body>
+
+    <div id="cssContainer"></div>
+
+    <div id="camerapos" class="hide">
+
+        <div class="position">
+            
+            <p class="px"> Position x : </p>
+            <p class="pxValue"> </p>
+                
+            <p class="py"> Position y : </p>
+            <p class="pyValue"> </p>
+
+            <p class="pz"> Position z : </p>
+            <p class="pzValue"> </p>
+
+        </div>
+        
+        <div class="target">
+
+            <p class="tx"> Target x : </p>
+                <p class="txValue"> </p>
+                    
+                <p class="ty"> Target y : </p>
+                <p class="tyValue"> </p>
+    
+                <p class="tz"> Target z : </p>
+                <p class="tzValue"> </p>
+
+        </div>
+
+        <div id="clipBoardCamButton">Copier</div>
+
+    </div>
+
+
+
+    <div id="objectpos" class="hide">
+
+        <select id="menuDeroulantObjets"></select>
+
+        <p class="opx"> Position x : </p>
+        <input type="range" min="-50" max="50" value="0" class="opxValue">
+        
+        <p class="opy"> Position y : </p>
+        <input type="range" min="-50" max="50" value="0" class="opyValue">
+
+        <p class="opz"> Position z : </p>
+        <input type="range" min="-50" max="50" value="0" class="opzValue">
+
+        <div id="clipBoardPosButton">Copier</div>
+
+    </div>
+
+
+    <div id="wrap-content" class="hide">
+
+        <div id="content">
+
+            <div id="close"></div>
+
+            <div id="update-content"></div>
+
+        </div>
+
+    </div>
+
+
+    <article class="contentPopup" id="viking-content"> 
+        <h2 class="popupTitle">Viking (1975)</h2>
+        <p class="popupText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem expedita dolores doloribus officiis! Rerum alias mollitia doloremque dicta! Pariatur, maxime!</p>
+        <img class="popupImage" src="img/content/viking.png" alt="Image de la sonde Viking.">
+    </article>
+
+    <article class="contentPopup" id="pathfinder-content"> 
+        <h2 class="popupTitle">Pathfinder (1996)</h2>
+        <p class="popupText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem expedita dolores doloribus officiis! Rerum alias mollitia doloremque dicta! Pariatur, maxime!</p>
+        <img class="popupImage" src="img/content/pathfinder.png" alt="Image de la sonde Pathfinder.">
+    </article>
+
+    <article class="contentPopup" id="curiosity-content"> 
+        <h2 class="popupTitle">Curiosity (2011)</h2>
+        <p class="popupText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem expedita dolores doloribus officiis! Rerum alias mollitia doloremque dicta! Pariatur, maxime!</p>
+        <img class="popupImage" src="img/content/curiosity.png" alt="Image de la sonde Curiosity.">
+    </article>
+
+    <article class="contentPopup" id="insight-content"> 
+        <h2 class="popupTitle">InSight (2018)</h2>
+        <p class="popupText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem expedita dolores doloribus officiis! Rerum alias mollitia doloremque dicta! Pariatur, maxime!</p>
+        <img class="popupImage" src="img/content/insight.png" alt="Image de la sonde InSight.">
+    </article>
+
+    
+    
+
+
+
+
+
     <canvas id="canvas"></canvas>
+
+    <div id="barre_icones">
+        <div id="button_interet" class="button_interet_on"></div>
+    </div>
+    
+
     <script src='js/app.js'> </script>
+
+
 </body>
 
 </html>
